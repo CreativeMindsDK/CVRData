@@ -19,7 +19,7 @@ namespace CreativeMinds.CVRData.Elasticsearch {
 			String searchBody = @"{
  ""query"": {
   ""multi_match"": {
-   ""query"": """ + name + @""",
+   ""query"": """ + companyName + @""",
    ""fields"": [
 	""Vrvirksomhed.binavne.navn"",
 	""Vrvirksomhed.navne.navn""

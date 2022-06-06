@@ -1,0 +1,30 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31912.275
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CreativeMinds.CVRData.Elasticsearch", "CreativeMinds.CVRData.Elasticsearch\CreativeMinds.CVRData.Elasticsearch.csproj", "{F55ED5F7-A505-45D4-A2B9-D4AD9FAE37CB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SolutionItems", "SolutionItems", "{B357A0F1-4C64-4401-8340-54EE371B8617}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F55ED5F7-A505-45D4-A2B9-D4AD9FAE37CB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F55ED5F7-A505-45D4-A2B9-D4AD9FAE37CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F55ED5F7-A505-45D4-A2B9-D4AD9FAE37CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F55ED5F7-A505-45D4-A2B9-D4AD9FAE37CB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {824255BA-3A70-4040-B686-8FDD293DA1E5}
+	EndGlobalSection
+EndGlobal

@@ -10,8 +10,8 @@ namespace CreativeMinds.CVRData.Elasticsearch {
 			services.Configure<CVRElasticsearchSettingsReader>(configuration.GetSection("CVRElasticsearch"));
 			services.AddTransient<ICVRElasticsearchSettings, CVRElasticsearchSettingsBridge>();
 
-			services.AddScoped<ISearchEngine, SearchEngine>();
 			//services.AddScoped<ISearchEngine, RawHttpSearchEngine>();
+			services.AddSingleton<ISearchEngine, SearchEngine>();
 
 			return services;
 		}

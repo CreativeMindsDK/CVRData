@@ -7,18 +7,17 @@ using System.Threading.Tasks;
 namespace CreativeMinds.CVRData.Elasticsearch {
 
 	public class SearchEngine : ISearchEngine {
-		protected readonly ICVRElasticsearchSettings settings;
+		protected readonly IElasticClient elasticClient;
 
 		public SearchEngine(ICVRElasticsearchSettings settings) {
-			this.settings = settings ?? throw new ArgumentNullException(nameof(settings));
+			Uri node = new Uri(settings.Endpoint);
+			ConnectionSettings connectionSettings = new ConnectionSettings(node);
+			connectionSettings.BasicAuthentication(settings.Username, settings.Password);
+			this.elasticClient= new ElasticClient(connectionSettings);
 		}
 
 		public async Task<Object> SearchAsync(String companyName, CancellationToken cancellationToken) {
-			Uri node = new Uri(this.settings.Endpoint);
-			ConnectionSettings settings = new ConnectionSettings(node);
-			settings.BasicAuthentication(this.settings.Username, this.settings.Password);
-			ElasticClient client = new ElasticClient(settings);
-			ISearchResponse<Object> response = await client.SearchAsync<Object>(s => s
+			ISearchResponse<Dtos.CompanyContainer> response = await this.elasticClient.SearchAsync<Dtos.CompanyContainer>(s => s
 					.Index("cvr-permanent")
 					.From(0)
 					.Size(10)
@@ -31,7 +30,6 @@ namespace CreativeMinds.CVRData.Elasticsearch {
 										.Field("Vrvirksomhed.navne.navn")
 					)))))
 				);
-
 
 			return response;
 		}

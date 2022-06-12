@@ -1,8 +1,6 @@
 ﻿using CreativeMinds.CVRData.Elasticsearch.AppSettings;
+using Nest;
 using System;
-using System.Net.Http;
-using System.Net.Http.Headers;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -16,39 +14,26 @@ namespace CreativeMinds.CVRData.Elasticsearch {
 		}
 
 		public async Task<Object> SearchAsync(String companyName, CancellationToken cancellationToken) {
-			String searchBody = @"{
- ""query"": {
-  ""multi_match"": {
-   ""query"": """ + companyName + @""",
-   ""fields"": [
-	""Vrvirksomhed.binavne.navn"",
-	""Vrvirksomhed.navne.navn""
-   ]
-  }
- }
-}
-";
+			Uri node = new Uri(this.settings.Endpoint);
+			ConnectionSettings settings = new ConnectionSettings(node);
+			settings.BasicAuthentication(this.settings.Username, this.settings.Password);
+			ElasticClient client = new ElasticClient(settings);
+			ISearchResponse<Object> response = await client.SearchAsync<Object>(s => s
+					.Index("cvr-permanent")
+					.From(0)
+					.Size(10)
+					.Query(q => q.Bool(b =>
+						b.Must(mu =>
+							mu.MultiMatch(m =>
+								m.Query(companyName)
+								.Fields(f => 
+									f.Field("Vrvirksomhed.binavne.navn")
+										.Field("Vrvirksomhed.navne.navn")
+					)))))
+				);
 
-			HttpClient client = new HttpClient();
-			client.Timeout = new TimeSpan(0, 0, 0, 0, 5000);
-			client.BaseAddress = new Uri(this.settings.Endpoint);
-			client.DefaultRequestHeaders
-				  .Accept
-				  .Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
-			String base64EncodedAuthenticationString = Convert.ToBase64String(ASCIIEncoding.ASCII.GetBytes($"{this.settings.Username}:{this.settings.Password}"));
-
-			HttpRequestMessage request = new HttpRequestMessage(HttpMethod.Post, "_search");
-			request.Headers.Authorization = new AuthenticationHeaderValue("Basic", base64EncodedAuthenticationString);
-			request.Content = new StringContent(searchBody, Encoding.UTF8, "application/json");
-
-			HttpResponseMessage response = await client.SendAsync(request);
-
-			String output = await response.Content.ReadAsStringAsync();
-
-			//var resultData = JsonConvert.DeserializeObject(output);
-
-			return output;
+			return response;
 		}
 	}
 }

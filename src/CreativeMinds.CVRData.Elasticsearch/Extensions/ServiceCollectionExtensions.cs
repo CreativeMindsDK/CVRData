@@ -11,6 +11,7 @@ namespace CreativeMinds.CVRData.Elasticsearch {
 			services.AddTransient<ICVRElasticsearchSettings, CVRElasticsearchSettingsBridge>();
 
 			services.AddScoped<ISearchEngine, SearchEngine>();
+			//services.AddScoped<ISearchEngine, RawHttpSearchEngine>();
 
 			return services;
 		}

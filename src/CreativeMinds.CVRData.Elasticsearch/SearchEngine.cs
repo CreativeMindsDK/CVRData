@@ -25,7 +25,7 @@ namespace CreativeMinds.CVRData.Elasticsearch {
 						b.Must(mu =>
 							mu.MultiMatch(m =>
 								m.Query(companyName)
-								.Fields(f => 
+								.Fields(f =>
 									f.Field("Vrvirksomhed.binavne.navn")
 										.Field("Vrvirksomhed.navne.navn")
 					)))))

@@ -19,4 +19,3 @@ build_script:
 after_build:
   - ps: >-
       Push-AppveyorArtifact src\creativeminds.cvrdata.elasticsearch\bin\release\*.nupkg
-

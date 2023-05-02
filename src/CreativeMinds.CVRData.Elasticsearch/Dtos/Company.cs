@@ -10,7 +10,9 @@ namespace CreativeMinds.CVRData.Elasticsearch.Dtos {
 		public Boolean CommercialProtection { get; set; }
 		[Nested(Name = "navne")]
 		public CompanyName[] Names { get; set; }
-		[Nest.Nested(Name = "binavne")]
+		[Nested(Name = "binavne")]
 		public CompanyName[] SecondaryNames { get; set; }
+		//[Nested(Name = "beliggenhedsadresse")]
+		//public Location[] PhysicalAddress { get; set; }
 	}
 }

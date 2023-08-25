@@ -1,4 +1,5 @@
 ﻿using CreativeMinds.CVRData.Elasticsearch.AppSettings;
+using Microsoft.Extensions.Configuration;
 using Nest;
 using System;
 using System.Threading;
@@ -9,6 +10,13 @@ namespace CreativeMinds.CVRData.Elasticsearch {
 	public class SearchEngine : ISearchEngine {
 		protected readonly IElasticClient elasticClient;
 
+		public SearchEngine(IConfigurationSection settings) {
+			Uri node = new Uri(settings["Endpoint"]);
+			ConnectionSettings connectionSettings = new ConnectionSettings(node);
+			connectionSettings.BasicAuthentication(settings["Username"], settings["Password"]);
+			this.elasticClient = new ElasticClient(connectionSettings);
+		}
+
 		public SearchEngine(ICVRElasticsearchSettings settings) {
 			Uri node = new Uri(settings.Endpoint);
 			ConnectionSettings connectionSettings = new ConnectionSettings(node);
@@ -16,11 +24,11 @@ namespace CreativeMinds.CVRData.Elasticsearch {
 			this.elasticClient= new ElasticClient(connectionSettings);
 		}
 
-		public async Task<Object> SearchAsync(String companyName, CancellationToken cancellationToken) {
-			ISearchResponse<Dtos.CompanyContainer> response = await this.elasticClient.SearchAsync<Dtos.CompanyContainer>(s => s
+		public Task<ISearchResponse<Dtos.CompanyContainer>> SearchAsync(String companyName, CancellationToken cancellationToken) {
+			return this.elasticClient.SearchAsync<Dtos.CompanyContainer>(s => s
 					.Index("cvr-permanent")
 					.From(0)
-					.Size(10)
+					.Size(1)
 					.Query(q => q.Bool(b =>
 						b.Must(mu =>
 							mu.MultiMatch(m =>
@@ -30,8 +38,6 @@ namespace CreativeMinds.CVRData.Elasticsearch {
 										.Field("Vrvirksomhed.navne.navn")
 					)))))
 				);
-
-			return response;
 		}
 	}
 }

@@ -28,7 +28,7 @@ namespace CreativeMinds.CVRData.Elasticsearch {
 			this.password = settings["Password"];
 		}
 
-		public async Task<Object> SearchAsync(String companyName, CancellationToken cancellationToken) {
+		public async Task<Object> SearchAsync(String companyName, Int32 maxHits, CancellationToken cancellationToken) {
 			String searchBody = @"{
  ""query"": {
   ""multi_match"": {

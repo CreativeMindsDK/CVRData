@@ -24,11 +24,11 @@ namespace CreativeMinds.CVRData.Elasticsearch {
 			this.elasticClient= new ElasticClient(connectionSettings);
 		}
 
-		public Task<ISearchResponse<Dtos.CompanyContainer>> SearchAsync(String companyName, CancellationToken cancellationToken) {
+		public Task<ISearchResponse<Dtos.CompanyContainer>> SearchAsync(String companyName, Int32 maxHits, CancellationToken cancellationToken) {
 			return this.elasticClient.SearchAsync<Dtos.CompanyContainer>(s => s
 					.Index("cvr-permanent")
 					.From(0)
-					.Size(1)
+					.Size(maxHits)
 					.Query(q => q.Bool(b =>
 						b.Must(mu =>
 							mu.MultiMatch(m =>

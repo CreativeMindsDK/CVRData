@@ -3,7 +3,7 @@ using System;
 
 namespace CreativeMinds.CVRData.Elasticsearch.Dtos {
 
-	public class BusinessInfo {
+	public class BusinessInfo : IPeriodItem {
 		[Nested(Name = "virksomhedsformkode")]
 		public Int32 BusinessTypeCode { get; set; }
 		[Nested(Name = "kortBeskrivelse")]

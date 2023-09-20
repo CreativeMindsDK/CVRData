@@ -3,7 +3,7 @@ using System;
 
 namespace CreativeMinds.CVRData.Elasticsearch.Dtos {
 
-	public class Location {
+	public class Location : IPeriodItem {
 		[Text(Name = "landekode")]
 		public String CountryCode { get; set; }
 		[Text(Name = "fritekst")]

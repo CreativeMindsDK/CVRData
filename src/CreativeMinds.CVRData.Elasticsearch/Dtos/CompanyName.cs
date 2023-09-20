@@ -3,7 +3,7 @@ using System;
 
 namespace CreativeMinds.CVRData.Elasticsearch.Dtos {
 
-	public class CompanyName {
+	public class CompanyName : IPeriodItem {
 		[Text(Name = "navn")]
 		public String Name { get; set; }
 		[Object(Name = "periode")]

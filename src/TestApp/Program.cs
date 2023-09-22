@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.Configuration;
+﻿using CreativeMinds.CVRData.Elasticsearch;
+using Microsoft.Extensions.Configuration;
 using Nest;
 
 namespace TestApp {
@@ -19,7 +20,7 @@ namespace TestApp {
 			ISearchResponse<CreativeMinds.CVRData.Elasticsearch.Dtos.CompanyContainer> data = search.SearchAsync("creativeminds", 10, cancellationToken).Result;
 
 			CreativeMinds.CVRData.Elasticsearch.RawHttpSearchEngine search2 = new CreativeMinds.CVRData.Elasticsearch.RawHttpSearchEngine(config.GetSection("CVRElasticsearch"));
-			Object resultData = search2.SearchAsync("elgiganten", 10, cancellationToken).Result;
+			Object resultData = search2.SearchAsync("kræftens bekæmpelse", 10, cancellationToken).Result;
 		}
 	}
 }

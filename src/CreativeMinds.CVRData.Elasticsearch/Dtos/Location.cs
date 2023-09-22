@@ -3,7 +3,7 @@ using System;
 
 namespace CreativeMinds.CVRData.Elasticsearch.Dtos {
 
-	public class Location : IPeriodItem {
+	public class Location : PeriodItemBase {
 		[Text(Name = "landekode")]
 		public String CountryCode { get; set; }
 		[Text(Name = "fritekst")]
@@ -28,7 +28,5 @@ namespace CreativeMinds.CVRData.Elasticsearch.Dtos {
 		public String Door { get; set; }
 		[Text(Name = "bynavn")]
 		public String City { get; set; }
-		[Text(Name = "periode")]
-		public Period Period { get; set; }
 	}
 }

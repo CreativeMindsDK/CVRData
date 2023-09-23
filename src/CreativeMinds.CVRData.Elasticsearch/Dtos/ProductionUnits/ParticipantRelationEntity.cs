@@ -1,6 +1,6 @@
 ﻿using Nest;
 
-namespace CreativeMinds.CVRData.Elasticsearch.Dtos {
+namespace CreativeMinds.CVRData.Elasticsearch.Dtos.ProductionUnits {
 
 	public class ParticipantRelationEntity {
 		[Nested(Name = "deltager")]

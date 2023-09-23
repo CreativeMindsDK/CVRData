@@ -104,5 +104,43 @@ namespace CreativeMinds.CVRData.Elasticsearch {
 				throw ex;
 			}
 		}
+
+		public async Task<Object> SearchForPersonAsync(String id, Int32 maxHits, CancellationToken cancellationToken) {
+			String searchBody = @"{
+ ""query"": {
+  ""multi_match"": {
+   ""query"": """ + id + @""",
+   ""fields"": [
+	""Vrdeltagerperson.navne.navn""
+   ]
+  }
+ }
+}
+";
+
+			HttpClient client = new HttpClient();
+			client.Timeout = new TimeSpan(0, 0, 0, 0, 5000);
+			client.BaseAddress = new Uri($"{this.endpoint}/cvr-permanent/deltager");
+			client.DefaultRequestHeaders
+				  .Accept
+				  .Add(new MediaTypeWithQualityHeaderValue("application/json"));
+
+			String base64EncodedAuthenticationString = Convert.ToBase64String(ASCIIEncoding.ASCII.GetBytes($"{this.username}:{this.password}"));
+
+			try {
+				HttpRequestMessage request = new HttpRequestMessage(HttpMethod.Post, "_search");
+				request.Headers.Authorization = new AuthenticationHeaderValue("Basic", base64EncodedAuthenticationString);
+				request.Content = new StringContent(searchBody, Encoding.UTF8, "application/json");
+
+				HttpResponseMessage response = await client.SendAsync(request);
+
+				String output = await response.Content.ReadAsStringAsync();
+
+				return JsonConvert.DeserializeObject(output);
+			}
+			catch (Exception ex) {
+				throw ex;
+			}
+		}
 	}
 }

@@ -1,7 +1,7 @@
 ﻿using Nest;
 using System;
 
-namespace CreativeMinds.CVRData.Elasticsearch.Dtos {
+namespace CreativeMinds.CVRData.Elasticsearch.Dtos.Companies {
 
 	public class CompanyContainer {
 		[Object(Name = "Vrvirksomhed")]

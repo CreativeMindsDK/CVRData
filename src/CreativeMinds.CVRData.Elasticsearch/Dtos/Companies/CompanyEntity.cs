@@ -1,7 +1,8 @@
-﻿using Nest;
+﻿using CreativeMinds.CVRData.Elasticsearch.Dtos.ProductionUnits;
+using Nest;
 using System;
 
-namespace CreativeMinds.CVRData.Elasticsearch.Dtos {
+namespace CreativeMinds.CVRData.Elasticsearch.Dtos.Companies {
 
 	public class CompanyEntity {
 		[Number(Name = "cvrNummer")]

@@ -2,8 +2,8 @@
 
 namespace CreativeMinds.CVRData.Elasticsearch.Dtos {
 
-	public class ParticipantRelation {
+	public class ParticipantRelationEntity {
 		[Nested(Name = "deltager")]
-		public Participant Participant { get; set; }
+		public ParticipantEntity Participant { get; set; }
 	}
 }

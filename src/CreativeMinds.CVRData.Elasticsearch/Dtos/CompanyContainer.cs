@@ -5,6 +5,6 @@ namespace CreativeMinds.CVRData.Elasticsearch.Dtos {
 
 	public class CompanyContainer {
 		[Object(Name = "Vrvirksomhed")]
-		public Company Company { get; set; }
+		public CompanyEntity Company { get; set; }
 	}
 }

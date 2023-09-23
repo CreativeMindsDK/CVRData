@@ -10,16 +10,16 @@ namespace CreativeMinds.CVRData.Elasticsearch {
 			return items.SingleOrDefault(i => i.Period.ValidFrom < DateTime.Now && i.Period.ValidTo.HasValue == false);
 		}
 
-		public static BusinessInfo? GetPresent(this BusinessInfo[] items) {
-			return ((PeriodItemBase[])items).GetPresent() as BusinessInfo;
+		public static BusinessInfoEntity? GetPresent(this BusinessInfoEntity[] items) {
+			return ((PeriodItemBase[])items).GetPresent() as BusinessInfoEntity;
 		}
 
-		public static Location? GetPresent(this Location[] items) {
-			return ((PeriodItemBase[])items).GetPresent() as Location;
+		public static LocationEntity? GetPresent(this LocationEntity[] items) {
+			return ((PeriodItemBase[])items).GetPresent() as LocationEntity;
 		}
 
-		public static CompanyName? GetPresent(this CompanyName[] items) {
-			return ((PeriodItemBase[])items).GetPresent() as CompanyName;
+		public static NameEntity? GetPresent(this NameEntity[] items) {
+			return ((PeriodItemBase[])items).GetPresent() as NameEntity;
 		}
 	}
 }

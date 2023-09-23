@@ -3,7 +3,7 @@ using System;
 
 namespace CreativeMinds.CVRData.Elasticsearch.Dtos {
 
-	public class Participant {
+	public class ParticipantEntity {
 		[Number(Name = "enhedsNummer")]
 		public Int64 Id { get; set; }
 		[Text(Name = "enhedstype")]
@@ -15,6 +15,16 @@ namespace CreativeMinds.CVRData.Elasticsearch.Dtos {
 		[Date(Name = "sidstOpdateret", Format = "yyyy-MM-ddTHH:mm:ss.fffzzzzz")]
 		public DateTime? LastUpdated { get; set; }
 		[Nested(Name = "navne")]
-		public CompanyName[] Names { get; set; }
+		public NameEntity[] Names { get; set; }
+		[Boolean(Name = "adresseHemmelig")]
+		public Boolean? SecretAddress { get; set; }
+		[Boolean(Name = "adresseHemmeligUndtagelse")]
+		public Boolean? SecretAddressException { get; set; }
+		[Boolean(Name = "adresseHemmeligUndtagelse")]
+		public Boolean? AddressUpdateEnded { get; set; }
+		[Nested(Name = "beliggenhedsadresse")]
+		public LocationEntity[] Location { get; set; }
+		[Nested(Name = "organisationer")]
+		public OrganisationEntity[] Organisations { get; set; }
 	}
 }

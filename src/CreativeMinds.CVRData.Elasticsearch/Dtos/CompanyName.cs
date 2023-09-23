@@ -7,6 +7,6 @@ namespace CreativeMinds.CVRData.Elasticsearch.Dtos {
 		[Text(Name = "navn")]
 		public String Name { get; set; }
 		[Date(Name = "sidstOpdateret", Format = "yyyy-MM-ddTHH:mm:ss.fffzzzzz")]
-		public DateTime LatestUpdated { get; set; }
+		public DateTime? LatestUpdated { get; set; }
 	}
 }

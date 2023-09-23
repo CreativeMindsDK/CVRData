@@ -28,5 +28,18 @@ namespace CreativeMinds.CVRData.Elasticsearch.Dtos {
 		public String Door { get; set; }
 		[Text(Name = "bynavn")]
 		public String City { get; set; }
+		[Text(Name = "adresseId")]
+		public String AddressId { get; set; }
+		[Date(Name = "sidstValideret", Format = "yyyy-MM-ddTHH:mm:ss.fffzzzzz")]
+		public DateTime? LastValidated { get; set; }
+		[Text(Name = "bogstavFra")]
+		public String LetterFrom { get; set; }
+		[Text(Name = "bogstavTil")]
+		public String LetterTo { get; set; }
+		[Text(Name = "conavn")]
+		public String CoName { get; set; }
+		[Text(Name = "postboks")]
+		public String POBox { get; set; }
+
 	}
 }

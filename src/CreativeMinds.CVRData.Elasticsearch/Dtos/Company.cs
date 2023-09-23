@@ -16,5 +16,9 @@ namespace CreativeMinds.CVRData.Elasticsearch.Dtos {
 		public Location[] PhysicalAddress { get; set; }
 		[Nested(Name = "virksomhedsform")]
 		public BusinessInfo[] BusinessInfo { get; set; }
+
+
+		[Nested(Name = "deltagerRelation")]
+		public ParticipantRelation[] Participants { get; set; }
 	}
 }

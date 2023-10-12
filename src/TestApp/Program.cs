@@ -16,13 +16,13 @@ namespace TestApp {
 
 			CancellationToken cancellationToken = new CancellationToken();
 
-			CreativeMinds.CVRData.Elasticsearch.SearchEngine search = new CreativeMinds.CVRData.Elasticsearch.SearchEngine(config.GetSection("CVRElasticsearch"));
-			//var data = search.SearchForProductionUnitByNameAsync("Lagkagehuset - 291 Hellerup", 10, cancellationToken).Result;
+			//CreativeMinds.CVRData.Elasticsearch.SearchEngine search = new CreativeMinds.CVRData.Elasticsearch.SearchEngine(config.GetSection("CVRElasticsearch"));
+			//var data = search.SearchForProductionUnitByNameAsync("Jonas Slyngbom Jørgensen", 10, cancellationToken).Result;
 			//var data = search.SearchForCompanyByIdAsync(20213094, 10, cancellationToken).Result;
 			//var data = search.SearchForProductionUnitByIdAsync(1016303093, 10, cancellationToken).Result;
 			//var data = search.SearchForParticipantByNameAsync("Steen Fredberg Tøttrup", 10, cancellationToken).Result;
 
-			var data = search.SearchForParticipantByIdAsync(4000391121, 10, cancellationToken).Result;
+			//var data = search.SearchForParticipantByIdAsync(4000391121, 10, cancellationToken).Result;
 
 
 

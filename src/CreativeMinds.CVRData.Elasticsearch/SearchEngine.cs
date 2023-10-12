@@ -2,7 +2,6 @@
 using CreativeMinds.CVRData.Elasticsearch.Dtos.Companies;
 using CreativeMinds.CVRData.Elasticsearch.Dtos.Participants;
 using CreativeMinds.CVRData.Elasticsearch.Dtos.ProductionUnits;
-using Microsoft.Extensions.Configuration;
 using Nest;
 using System;
 using System.Collections.Generic;
@@ -14,19 +13,19 @@ namespace CreativeMinds.CVRData.Elasticsearch {
 	public class SearchEngine : ISearchEngine {
 		protected readonly IElasticClient elasticClient;
 
-		public SearchEngine(IConfigurationSection settings) {
-			Uri node = new Uri(settings["Endpoint"]);
-			ConnectionSettings connectionSettings = new ConnectionSettings(node);
-			connectionSettings.BasicAuthentication(settings["Username"], settings["Password"]);
-			this.elasticClient = new ElasticClient(connectionSettings);
-		}
-
-		//public SearchEngine(ICVRElasticsearchSettings settings) {
-		//	Uri node = new Uri(settings.Endpoint);
+		//public SearchEngine(IConfigurationSection settings) {
+		//	Uri node = new Uri(settings["Endpoint"]);
 		//	ConnectionSettings connectionSettings = new ConnectionSettings(node);
-		//	connectionSettings.BasicAuthentication(settings.Username, settings.Password);
+		//	connectionSettings.BasicAuthentication(settings["Username"], settings["Password"]);
 		//	this.elasticClient = new ElasticClient(connectionSettings);
 		//}
+
+		public SearchEngine(ICVRElasticsearchSettings settings) {
+			Uri node = new Uri(settings.Endpoint);
+			ConnectionSettings connectionSettings = new ConnectionSettings(node);
+			connectionSettings.BasicAuthentication(settings.Username, settings.Password);
+			this.elasticClient = new ElasticClient(connectionSettings);
+		}
 
 		public async Task<ISearchResponse<CompanyContainer>> SearchForCompanyByIdAsync(Int32 companyId, Int32 maxHits, CancellationToken cancellationToken) {
 			return await this.elasticClient.SearchAsync<CompanyContainer>(s => s

@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace CreativeMinds.CVRData.Elasticsearch {
 
 	public interface ISearchEngine {
-		Task<ISearchResponse<CompanyContainer>> SearchForCompanyByNamesAsync(String query, Int32 maxHits, CancellationToken cancellationToken);
+		Task<ISearchResponse<CompanyContainer>> SearchForCompanyByNameAndAddressAsync(String name, String address, Int32? houseNumber, Int32 maxHits, CancellationToken cancellationToken);
 		Task<ISearchResponse<CompanyContainer>> SearchForCompanyByIdAsync(Int32 companyId, Int32 maxHits, CancellationToken cancellationToken);
 		Task<ISearchResponse<ProductionUnitContainer>> SearchForProductionUnitByNameAsync(String query, Int32 maxHits, CancellationToken cancellationToken);
 		Task<ISearchResponse<ProductionUnitContainer>> SearchForProductionUnitByIdAsync(Int64 productionUnitId, Int32 maxHits, CancellationToken cancellationToken);

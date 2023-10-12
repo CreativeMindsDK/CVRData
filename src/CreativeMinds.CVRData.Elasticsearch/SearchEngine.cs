@@ -21,12 +21,12 @@ namespace CreativeMinds.CVRData.Elasticsearch {
 			this.elasticClient = new ElasticClient(connectionSettings);
 		}
 
-		public SearchEngine(ICVRElasticsearchSettings settings) {
-			Uri node = new Uri(settings.Endpoint);
-			ConnectionSettings connectionSettings = new ConnectionSettings(node);
-			connectionSettings.BasicAuthentication(settings.Username, settings.Password);
-			this.elasticClient = new ElasticClient(connectionSettings);
-		}
+		//public SearchEngine(ICVRElasticsearchSettings settings) {
+		//	Uri node = new Uri(settings.Endpoint);
+		//	ConnectionSettings connectionSettings = new ConnectionSettings(node);
+		//	connectionSettings.BasicAuthentication(settings.Username, settings.Password);
+		//	this.elasticClient = new ElasticClient(connectionSettings);
+		//}
 
 		public async Task<ISearchResponse<CompanyContainer>> SearchForCompanyByIdAsync(Int32 companyId, Int32 maxHits, CancellationToken cancellationToken) {
 			return await this.elasticClient.SearchAsync<CompanyContainer>(s => s

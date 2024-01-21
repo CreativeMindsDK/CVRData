@@ -52,9 +52,9 @@ jobs:
 #        run: dotnet test /p:Configuration=$BUILD_CONFIG --no-restore --no-build --verbosity normal
 
       - name: Pack
-        working-directory: ./src
+        working-directory: ./src/CreativeMinds.CVRData.Elasticsearch
         run: dotnet pack --configuration $BUILD_CONFIG
 
       - name: Publish
-        working-directory: ./src
+        working-directory: ./src/CreativeMinds.CVRData.Elasticsearch
         run: nuget push **\*.nupkg -Source 'https://nuget.pkg.github.com/CreativeMindsDK/index.json' -ApiKey ${{secrets.NUGET_API_KEY}}

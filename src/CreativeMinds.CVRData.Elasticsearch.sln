@@ -15,9 +15,10 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Build", "Build", "{50614A6C-A3C6-490D-B6A0-C9E0E8761F95}"
 	ProjectSection(SolutionItems) = preProject
 		..\appveyor.yml = ..\appveyor.yml
+		..\.github\workflows\Publish NuGet.yml = ..\.github\workflows\Publish NuGet.yml
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestApp", "TestApp\TestApp.csproj", "{4E6F49D5-AA2D-4A8A-AD4F-1AB8323082CE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestApp", "TestApp\TestApp.csproj", "{4E6F49D5-AA2D-4A8A-AD4F-1AB8323082CE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

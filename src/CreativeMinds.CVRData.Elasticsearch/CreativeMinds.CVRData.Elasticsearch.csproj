@@ -3,7 +3,7 @@
 	<PropertyGroup>
 		<TargetFramework>net8.0</TargetFramework>
 		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-		<Version>1.0.5.0</Version>
+		<Version>1.1.0</Version>
 		<Authors>Steen F. Tøttrup</Authors>
 		<Company>CreativeMinds Aps</Company>
 		<Description>Searching the public Danish company database</Description>

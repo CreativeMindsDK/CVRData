@@ -9,8 +9,8 @@
 		<Description>Searching the public Danish company database</Description>
 		<Copyright>Copyright 2023 (C) CreativeMinds Aps. All rights reserved.</Copyright>
 		<PackageLicenseUrl>https://www.creativeminds.dk/license</PackageLicenseUrl>
-		<PackageProjectUrl>https://bitbucket.org/steentottrup/skolevisioner.common.dapper</PackageProjectUrl>
-		<RepositoryUrl>https://github.com/CreativeMindsDK/creativeminds-common-appmodels</RepositoryUrl>
+		<PackageProjectUrl>https://github.com/CreativeMindsDK/cvrdata</PackageProjectUrl>
+		<RepositoryUrl>https://github.com/CreativeMindsDK/cvrdata</RepositoryUrl>
 		<RepositoryType>git</RepositoryType>
 	</PropertyGroup>
 

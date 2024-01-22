@@ -57,4 +57,4 @@ jobs:
 
       - name: Publish
         working-directory: ./src/CreativeMinds.CVRData.Elasticsearch
-        run: nuget push **\*.nupkg -Source 'https://nuget.pkg.github.com/CreativeMindsDK/index.json' -ApiKey ${{secrets.NUGET_API_KEY}}
+        run: nuget push **\*.nupkg -Source 'https://nuget.pkg.github.com/CreativeMindsDK/index.json' -ApiKey ${{secrets.PVT_NUGET_API_KEY}}

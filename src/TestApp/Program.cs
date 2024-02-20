@@ -21,9 +21,11 @@ namespace TestApp {
 			config.GetSection("CVRElasticsearch").Bind(settings);
 
 
-			//RawHttpSearchEngine raw = new RawHttpSearchEngine(settings);
+			RawHttpSearchEngine raw = new RawHttpSearchEngine(settings);
 			//var r = raw.SearchForCompanyByIdAsync(20213094, 10, cancellationToken).Result;
+			//var r = raw.SearchForCompanyByIdAsync(30530470, 10, cancellationToken).Result;
 
+			
 
 			CreativeMinds.CVRData.Elasticsearch.SearchEngine search = new CreativeMinds.CVRData.Elasticsearch.SearchEngine(settings);
 

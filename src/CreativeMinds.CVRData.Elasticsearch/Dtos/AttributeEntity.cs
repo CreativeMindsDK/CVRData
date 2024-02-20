@@ -11,6 +11,6 @@ namespace CreativeMinds.CVRData.Elasticsearch.Dtos {
 		[Nested(Name = "vaerditype")]
 		public String ValueType { get; set; }
 		[Nested(Name = "vaerdier")]
-		public Object[] Values { get; set; }
+		public ValueEntity[] Values { get; set; }
 	}
 }

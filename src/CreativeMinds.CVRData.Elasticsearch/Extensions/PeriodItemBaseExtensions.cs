@@ -10,8 +10,25 @@ namespace CreativeMinds.CVRData.Elasticsearch {
 			return items.SingleOrDefault(i => i.Period.ValidFrom < DateTime.Now && i.Period.ValidTo.HasValue == false);
 		}
 
+		public static PeriodItemBase? GetLatest(this PeriodItemBase[] items) {
+			var present = items.GetPresent();
+			if (present != null) {
+				return present;
+			}
+
+			return items.OrderByDescending(i => i.Period.ValidFrom.Value).FirstOrDefault();
+		}
+
 		public static BusinessInfoEntity? GetPresent(this BusinessInfoEntity[] items) {
 			return ((PeriodItemBase[])items).GetPresent() as BusinessInfoEntity;
+		}
+
+		public static BusinessStatus? GetPresent(this BusinessStatus[] items) {
+			return ((PeriodItemBase[])items).GetPresent() as BusinessStatus;
+		}
+
+		public static BusinessStatus? GetLatest(this BusinessStatus[] items) {
+			return ((PeriodItemBase[])items).GetPresent() as BusinessStatus;
 		}
 
 		public static LocationEntity? GetPresent(this LocationEntity[] items) {

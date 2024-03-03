@@ -15,10 +15,10 @@ namespace CreativeMinds.CVRData.Elasticsearch.Dtos.Companies {
 		public NameEntity[] SecondaryNames { get; set; }
 		[Nested(Name = "beliggenhedsadresse")]
 		public LocationEntity[] PhysicalAddress { get; set; }
+		[Nested(Name = "virksomhedsstatus")]
+		public BusinessStatus[] BusinessStatus { get; set; }
 		[Nested(Name = "virksomhedsform")]
 		public BusinessInfoEntity[] BusinessInfo { get; set; }
-
-
 		[Nested(Name = "deltagerRelation")]
 		public ParticipantRelationEntity[] Participants { get; set; }
 	}

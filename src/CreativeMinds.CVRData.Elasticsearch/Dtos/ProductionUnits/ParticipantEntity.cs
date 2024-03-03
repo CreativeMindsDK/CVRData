@@ -24,7 +24,5 @@ namespace CreativeMinds.CVRData.Elasticsearch.Dtos.ProductionUnits {
 		public Boolean? AddressUpdateEnded { get; set; }
 		[Nested(Name = "beliggenhedsadresse")]
 		public LocationEntity[] Location { get; set; }
-		[Nested(Name = "organisationer")]
-		public OrganisationEntity[] Organisations { get; set; }
 	}
 }

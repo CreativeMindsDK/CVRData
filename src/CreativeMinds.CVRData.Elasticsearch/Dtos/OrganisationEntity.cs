@@ -10,5 +10,7 @@ namespace CreativeMinds.CVRData.Elasticsearch.Dtos {
 		public String Type { get; set; }
 		[Nested(Name = "organisationsNavn")]
 		public NameEntity[] Names { get; set; }
+		[Nested(Name = "medlemsData")]
+		public MemberData[] MemberData { get; set; }
 	}
 }

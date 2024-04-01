@@ -84,6 +84,10 @@ namespace CreativeMinds.CVRData.Elasticsearch {
 			}
 		}
 
+		public async Task<ISearchResponse<CompanyContainer>> SearchForCompanyByNameAsync(String name, Int32 maxHits, CancellationToken cancellationToken) {
+			return await this.SearchForCompanyByNameAndAddressAsync(name, String.Empty, null, 5, cancellationToken);
+		}
+
 		public async Task<ISearchResponse<ParticipantContainer>> SearchForParticipantByIdAsync(Int64 unitId, Int32 maxHits, CancellationToken cancellationToken) {
 			return await this.elasticClient.SearchAsync<ParticipantContainer>(s => s
 					.Index("cvr-permanent")

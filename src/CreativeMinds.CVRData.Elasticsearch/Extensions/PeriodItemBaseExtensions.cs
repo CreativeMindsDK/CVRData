@@ -18,6 +18,10 @@ namespace CreativeMinds.CVRData.Elasticsearch {
 			return ((PeriodItemBase[])items).GetPresent() as BusinessInfoEntity;
 		}
 
+		public static CompanyRelationEntity? GetPresent(this CompanyRelationEntity[] items) {
+			return ((PeriodItemBase[])items).GetPresent() as CompanyRelationEntity;
+		}
+
 		public static LocationEntity? GetPresent(this LocationEntity[] items) {
 			return ((PeriodItemBase[])items).GetPresent() as LocationEntity;
 		}

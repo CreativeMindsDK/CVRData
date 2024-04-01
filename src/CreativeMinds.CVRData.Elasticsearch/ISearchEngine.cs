@@ -1,5 +1,4 @@
 ﻿using CreativeMinds.CVRData.Elasticsearch.Dtos.Companies;
-using CreativeMinds.CVRData.Elasticsearch.Dtos.Participants;
 using CreativeMinds.CVRData.Elasticsearch.Dtos.ProductionUnits;
 using Nest;
 using System;
@@ -9,6 +8,7 @@ using System.Threading.Tasks;
 namespace CreativeMinds.CVRData.Elasticsearch {
 
 	public interface ISearchEngine {
+		Task<ISearchResponse<CompanyContainer>> SearchForCompanyByNameAsync(String name, Int32 maxHits, CancellationToken cancellationToken);
 		Task<ISearchResponse<CompanyContainer>> SearchForCompanyByNameAndAddressAsync(String name, String address, Int32? houseNumber, Int32 maxHits, CancellationToken cancellationToken);
 		Task<ISearchResponse<CompanyContainer>> SearchForCompanyByIdAsync(Int32 companyId, Int32 maxHits, CancellationToken cancellationToken);
 		Task<ISearchResponse<ProductionUnitContainer>> SearchForProductionUnitByNameAsync(String query, Int32 maxHits, CancellationToken cancellationToken);

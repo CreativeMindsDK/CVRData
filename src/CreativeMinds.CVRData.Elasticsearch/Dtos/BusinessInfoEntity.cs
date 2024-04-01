@@ -5,7 +5,7 @@ namespace CreativeMinds.CVRData.Elasticsearch.Dtos {
 
 	public class BusinessInfoEntity : PeriodItemBase {
 		[Nested(Name = "virksomhedsformkode")]
-		public Int32 BusinessTypeCode { get; set; }
+		public Int32? BusinessTypeCode { get; set; }
 		[Nested(Name = "kortBeskrivelse")]
 		public String ShortDescription { get; set; }
 		[Nested(Name = "langBeskrivelse")]

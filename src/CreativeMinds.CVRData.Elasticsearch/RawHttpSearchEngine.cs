@@ -105,11 +105,11 @@ namespace CreativeMinds.CVRData.Elasticsearch {
 			}
 		}
 
-		public async Task<Object> SearchForCompanyByIdAsync(Int32 vat, Int32 maxHits, CancellationToken cancellationToken) {
+		public async Task<Object> SearchForCompanyByVatAsync(String vatNumber, Int32 maxHits, CancellationToken cancellationToken) {
 			String searchBody = @"{
  ""query"": {
   ""multi_match"": {
-   ""query"": """ + vat.ToString() + @""",
+   ""query"": """ + vatNumber + @""",
    ""fields"": [
 	""Vrvirksomhed.cvrNummer""
    ]

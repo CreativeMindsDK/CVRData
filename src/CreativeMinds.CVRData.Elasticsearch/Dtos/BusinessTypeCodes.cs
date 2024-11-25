@@ -16,6 +16,10 @@
 		/// <summary>
 		/// Forening
 		/// </summary>
-		Forening = 110
+		Forening = 110,
+		/// <summary>
+		/// Frivillig forening
+		/// </summary>
+		FrivilligForening = 115
 	}
 }

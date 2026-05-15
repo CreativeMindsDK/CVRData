@@ -4,166 +4,208 @@
 		/// <summary>
 		/// Enkeltmandsvirksomhed - Sole proprietorship
 		/// </summary>
-		ENK = 10,
+		SoleProprietorship = 10,
 		/// <summary>
 		/// Personligt ejet Mindre Virksomhed - Personally owned small business
 		/// </summary>
-		PMV = 15,
+		PersonallyOwnedSmallBusiness = 15,
 		/// <summary>
 		/// Dødsbo - Estate
 		/// </summary>
-		DØD = 20,
+		Estate = 20,
 		/// <summary>
 		/// Interessentskab - Partnership
 		/// </summary>
-		IS = 30,
+		Partnership = 30,
 		/// <summary>
 		/// Kommanditselskab - Limited partnership
 		/// </summary>
-		KS = 40,
+		LimitedPartnership = 40,
 		/// <summary>
 		/// Medarbejderinvesteringsselskab - Employee investment company
 		/// </summary>
-		MSS = 45,
+		EmployeeInvestmentCompany = 45,
 		/// <summary>
 		/// Partrederi - Ship partnership
 		/// </summary>
-		PAR = 50,
+		ShipPartnership = 50,
 		/// <summary>
-		/// A/S
+		/// Aktieselskab - Public limited company
 		/// </summary>
-		AS = 60,
+		PublicLimitedCompany = 60,
 		/// <summary>
 		/// Kommanditaktieselskab/Partnerselskab - Limited partnership company
 		/// </summary>
-		KAS = 70,
+		LimitedPartnershipCompany = 70,
 		/// <summary>
-		/// Anpartsselskab
+		/// Anpartsselskab - Private limited company
 		/// </summary>
-		ApS = 80,
+		PrivateLimitedCompany = 80,
 		/// <summary>
-		/// Iværksætterselskab
+		/// Iværksætterselskab - Entrepreneur company
 		/// </summary>
-		IVS = 81,
+		EntrepreneurCompany = 81,
 		/// <summary>
 		/// Fonde og andre selvejende institutioner - Foundations and self-governing institutions
 		/// </summary>
-		FON = 90,
+		FoundationsAndSelfGoverningInstitutions = 90,
 		/// <summary>
 		/// Trust - Trust
 		/// </summary>
-		TRU = 95,
+		Trust = 95,
 		/// <summary>
 		/// Erhvervsdrivende fond - Commercial foundation
 		/// </summary>
-		EFO = 100,
+		CommercialFoundation = 100,
 		/// <summary>
 		/// Forening - Association
 		/// </summary>
-		FOR = 110,
+		Association = 110,
 		/// <summary>
 		/// Frivillig forening - Voluntary association
 		/// </summary>
-		FFO = 115,
+		VoluntaryAssociation = 115,
 		/// <summary>
 		/// Andelsselskab (-forening) - Cooperative company
 		/// </summary>
-		ANS = 130,
+		CooperativeCompany = 130,
 		/// <summary>
 		/// Andelsselskab med begrænset ansvar - Cooperative with limited liability
 		/// </summary>
-		ABA = 140,
+		CooperativeWithLimitedLiability = 140,
 		/// <summary>
 		/// Forening eller selskab med begrænset ansvar - Association or company with limited liability
 		/// </summary>
-		FBA = 150,
+		AssociationOrCompanyWithLimitedLiability = 150,
 		/// <summary>
 		/// Selskab med begrænset ansvar - Company with limited liability
 		/// </summary>
-		SMA = 151,
+		CompanyWithLimitedLiability = 151,
 		/// <summary>
 		/// Forening med begrænset ansvar - Association with limited liability
 		/// </summary>
-		FMA = 152,
+		AssociationWithLimitedLiability = 152,
 		/// <summary>
 		/// Europæisk Økonomisk Firmagruppe - European Economic Interest Grouping
 		/// </summary>
-		EØF = 160,
+		EuropeanEconomicInterestGrouping = 160,
 		/// <summary>
 		/// Filial af udenlandsk aktieselskab - Branch of foreign stock company
 		/// </summary>
-		FAS = 170,
+		BranchOfForeignStockCompany = 170,
 		/// <summary>
 		/// Filial af udenlandsk anpartsselskab - Branch of foreign private company
 		/// </summary>
-		FAP = 180,
+		BranchOfForeignPrivateCompany = 180,
 		/// <summary>
 		/// Filial af udenlandsk virksomhed med begrænset ansv - Branch of foreign limited liability company
 		/// </summary>
-		FBUA = 190,
+		BranchOfForeignLimitedLiabilityCompany = 190,
 		/// <summary>
 		/// SCE-selskab - SCE company
 		/// </summary>
-		SCE = 195,
+		SCECompany = 195,
 		/// <summary>
 		/// Anden udenlandsk virksomhed - Other foreign company
 		/// </summary>
-		UDL = 210,
+		OtherForeignCompany = 210,
 		/// <summary>
 		/// Fast forretningssted af Europæisk økonomisk Firmag - Permanent establishment of EEIG
 		/// </summary>
-		FEØ = 220,
+		PermanentEstablishmentOfEEIG = 220,
 		/// <summary>
 		/// Statslig administrativ enhed - State administrative unit
 		/// </summary>
-		STA = 230,
+		StateAdministrativeUnit = 230,
 		/// <summary>
 		/// Selvstændig offentlig virksomhed - Independent public company
 		/// </summary>
-		SOV = 235,
+		IndependentPublicCompany = 235,
 		/// <summary>
 		/// Amtskommune - County
 		/// </summary>
-		AMT = 240,
+		County = 240,
 		/// <summary>
 		/// Region - Region
 		/// </summary>
-		REG = 245,
+		Region = 245,
 		/// <summary>
 		/// Primærkommune - Primary municipality
 		/// </summary>
-		KOM = 250,
+		PrimaryMunicipality = 250,
 		/// <summary>
 		/// Folkekirkelige Institutioner - Church institutions
 		/// </summary>
-		FKI = 260,
+		ChurchInstitutions = 260,
 		/// <summary>
 		/// Enhed under oprettelse i Erhvervsstyrelsen - Unit under establishment
 		/// </summary>
-		EUO = 270,
+		UnitUnderEstablishment = 270,
 		/// <summary>
 		/// Øvrige virksomhedsformer - Other company forms
 		/// </summary>
-		ØVR = 280,
+		OtherCompanyForms = 280,
 		/// <summary>
 		/// Særlig finansiel virksomhed - Special financial business
 		/// </summary>
-		FIV = 285,
+		SpecialFinancialBusiness = 285,
 		/// <summary>
 		/// SE-selskab - SE company (European Company)
 		/// </summary>
-		ES = 290,
+		SECompany = 290,
 		/// <summary>
 		/// Filial af SE-selskab - Branch of SE company
 		/// </summary>
-		FES = 291,
+		BranchOfSECompany = 291,
 		/// <summary>
 		/// Grønlandsk afdeling af udenlandsk selskab - Greenlandic division of foreign company
 		/// </summary>
-		GUS = 520,
+		GreenlandicDivisionOfForeignCompany = 520,
 		/// <summary>
 		/// Uoplyst virksomhedsform - Unknown company form
 		/// </summary>
-		UDP = 990 
+		UnknownCompanyForm = 990,
+
+		ENK = SoleProprietorship,
+		APS = PrivateLimitedCompany,
+		FFO = VoluntaryAssociation,
+		PMV = PersonallyOwnedSmallBusiness,
+		IS = Partnership,
+		AS = PublicLimitedCompany,
+		FOR = Association,
+		IVS = EntrepreneurCompany,
+		UDL = OtherForeignCompany,
+		FON = FoundationsAndSelfGoverningInstitutions,
+		EUO = UnitUnderEstablishment,
+		ØVR = OtherCompanyForms,
+		KS = LimitedPartnership,
+		FKI = ChurchInstitutions,
+		SMA = CompanyWithLimitedLiability,
+		FAS = BranchOfForeignStockCompany,
+		KAS = LimitedPartnershipCompany,
+		ANS = CooperativeCompany,
+		EFO = CommercialFoundation,
+		DØD = Estate,
+		FAP = BranchOfForeignPrivateCompany,
+		UOP = UnknownCompanyForm,
+		ABA = CooperativeWithLimitedLiability,
+		FMA = AssociationWithLimitedLiability,
+		PAR = ShipPartnership,
+		STA = StateAdministrativeUnit,
+		KOM = PrimaryMunicipality,
+		FIV = SpecialFinancialBusiness,
+		GUS = GreenlandicDivisionOfForeignCompany,
+		FBA = AssociationOrCompanyWithLimitedLiability,
+		FBA2 = BranchOfForeignLimitedLiabilityCompany,
+		FES = BranchOfSECompany,
+		AMT = County,
+		ES = SECompany,
+		EØF = EuropeanEconomicInterestGrouping,
+		SOV = IndependentPublicCompany,
+		TRU = Trust,
+		REG = Region,
+		MSS = EmployeeInvestmentCompany,
+		FEØ = PermanentEstablishmentOfEEIG,
+		SCE = SCECompany,
 	}
 }
